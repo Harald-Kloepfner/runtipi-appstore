@@ -1,0 +1,40 @@
+{
+  "name": "ZeroClaw",
+  "id": "zeroclaw",
+  "available": true,
+  "short_desc": "Personal AI assistant you run on your own devices.",
+  "author": "zeroclaw-labs",
+  "port": 42617,
+  "categories": [
+    "artificial-intelligence"
+  ],
+  "description": "ZeroClaw is a personal AI assistant you run on your own devices. It answers you on the channels you already use (WhatsApp, Telegram, Slack, Discord, Signal, iMessage, Matrix, IRC, Email, Bluesky, Nostr, Mattermost, Nextcloud Talk, DingTalk, Lark, QQ, Reddit, LinkedIn, Twitter, MQTT, WeChat Work, and more). It has a web dashboard for real-time control and can connect to hardware peripherals (ESP32, STM32, Arduino, Raspberry Pi). Zero overhead. Zero compromise. 100% Rust. 100% Agnostic. Runs on $10 hardware with <5MB RAM.",
+  "tipi_version": 2,
+  "version": "v0.7.1",
+  "source": "https://github.com/zeroclaw-labs/zeroclaw",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1776780696000,
+  "updated_at": 1776780696000,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+      "name": "API_KEY",
+      "label": "API Key",
+      "type": "text",
+      "required": true,
+      "description": "Your LLM provider API key (OpenRouter, OpenAI, Anthropic, etc.)"
+    },
+    {
+      "name": "PROVIDER",
+      "label": "LLM Provider",
+      "type": "text",
+      "default": "openrouter",
+      "required": false,
+      "description": "LLM provider: openrouter, openai, anthropic, ollama"
+    }
+  ]
+}
