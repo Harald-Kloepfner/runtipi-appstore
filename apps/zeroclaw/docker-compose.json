@@ -1,0 +1,36 @@
+{
+  "services": {
+    "zeroclaw": {
+      "image": "ghcr.io/zeroclaw-labs/zeroclaw:latest",
+      "x-runtipi": {
+        "is_main": true,
+        "internal_port": "42617"
+      },
+      "restart": "unless-stopped",
+      "environment": [
+        "API_KEY=${API_KEY}",
+        "PROVIDER=${PROVIDER:-openrouter}",
+        "ZEROCLAW_ALLOW_PUBLIC_BIND=true",
+        "ZEROCLAW_GATEWAY_PORT=42617"
+      ],
+      "volumes": [
+        "zeroclaw-data:/zeroclaw-data"
+      ],
+      "deploy": {
+        "resources": {
+          "limits": {
+            "cpus": "2",
+            "memory": "512M"
+          },
+          "reservations": {
+            "cpus": "0.5",
+            "memory": "32M"
+          }
+        }
+      }
+    }
+  },
+  "x-runtipi": {
+    "schema_version": 2
+  }
+}
